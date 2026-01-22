@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div class="calculator">
+    <div class="top-bar">
+        <span id="mode">DEG</span>
+        <button id="degToggle">DEG</button>
+        <button id="themeToggle">🌙</button>
+    </div>
+
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+        <!-- Scientific -->
+        <button onclick="func('sin')">sin</button>
+        <button onclick="func('cos')">cos</button>
+        <button onclick="func('tan')">tan</button>
+        <button onclick="func('log')">log</button>
+
+        <button onclick="func('ln')">ln</button>
+        <button onclick="func('sqrt')">√</button>
+        <button onclick="func('square')">x²</button>
+        <button onclick="power()">xʸ</button>
+
+        <button onclick="append('(')">(</button>
+        <button onclick="append(')')">)</button>
+        <button onclick="append('π')">π</button>
+        <button onclick="append('e')">e</button>
+
+        <button onclick="factorial()">!</button>
+        <button onclick="append('%')">MOD</button>
+        <button onclick="clearAll()" class="danger">AC</button>
+        <button onclick="del()">DEL</button>
+
+        <!-- Numbers -->
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('/')">÷</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('*')">×</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('-')">−</button>
+
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button onclick="calculate()" class="equal">=</button>
+        <button onclick="append('+')">+</button>
+    </div>
+
+    <!-- History Panel -->
+    <div id="history-container">
+        <h3>History</h3>
+        <ul id="history-list"></ul>
+        <button id="clearHistoryBtn">Clear History</button>
+    </div>
+</div>
+
+<audio id="clickSound" src="click.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
